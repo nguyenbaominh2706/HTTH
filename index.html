@@ -3,9 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MathBot AI</title>
+    <title>MathBot AI - Future of Learning</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
     <script>
       tailwind.config = {
         theme: {
@@ -24,6 +30,7 @@
             animation: {
               'float': 'float 6s ease-in-out infinite',
               'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'spin-slow': 'spin 3s linear infinite',
             },
             keyframes: {
               float: {
@@ -39,12 +46,17 @@
         },
       }
     </script>
+    
+    <!-- Custom Styles -->
     <style>
       body {
         background-color: #050510;
         color: #fff;
         overflow-x: hidden;
+        margin: 0;
+        padding: 0;
       }
+      
       /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 8px;
@@ -56,22 +68,31 @@
         background: #bc13fe;
         border-radius: 4px;
       }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #9c10ce;
+      }
+
+      /* Loading animation */
+      .loader {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #00f3ff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0"
-  }
-}
-</script>
-</head>
+  </head>
+  
   <body>
+    <!-- Root element where React app will mount -->
     <div id="root"></div>
+    
+    <!-- Vite will inject the bundled JS here during build -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>

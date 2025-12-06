@@ -1,0 +1,8 @@
+{
+  "name": "MathBot AI - Future of Learning",
+  "description": "A futuristic, AI-powered mathematics learning platform featuring 3D carousel navigation, AI problem solving, and an animated robot assistant.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
